@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+
+Sitemap: https://www.tecchen.xyz/sitemap.xml
+Sitemap: https://www.tecchen.xyz/baidusitemap.xml
