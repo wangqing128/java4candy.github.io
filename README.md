@@ -1,6 +1,6 @@
 # 我的技术博客
 
-> 博客同步发布到我的博客[http://www.tecchen.xyz](http://www.tecchen.xyz)。  
+> 博客同步发布到我的博客[https://blog.tecchen.xyz](https://blog.tecchen.xyz)。  
 > 同时也同步发布到我的博客园[http://www.cnblogs.com/candies](http://www.cnblogs.com/candies)。  
 
 希望自己坚持下来。

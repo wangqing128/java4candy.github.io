@@ -1,4 +1,2971 @@
-<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"><link rel="stylesheet" href="/css/main.css?v=6.7.0"><link rel="apple-touch-icon" sizes="180x180" href="https://www.tecchen.xyz/favicon.ico?v=6.7.0"><link rel="icon" type="image/png" sizes="32x32" href="https://www.tecchen.xyz/favicon.ico?v=6.7.0"><link rel="icon" type="image/png" sizes="16x16" href="https://www.tecchen.xyz/favicon.ico?v=6.7.0"><link rel="mask-icon" href="https://www.tecchen.xyz/favicon.ico?v=6.7.0" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",version:"6.7.0",sidebar:{position:"left",display:"hide",offset:12,b2t:!1,scrollpercent:!0,onmobile:!0},fancybox:!0,fastclick:!0,lazyload:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><meta name="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta name="keywords" content="Candyメ奶糖,TEC-CHEN,TEC-9,TEC-NINE,java4candy,candy4java"><meta property="og:type" content="website"><meta property="og:title" content="Candyメ奶糖的个人博客"><meta property="og:url" content="https://www.tecchen.xyz/index.html"><meta property="og:site_name" content="Candyメ奶糖的个人博客"><meta property="og:description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Candyメ奶糖的个人博客"><meta name="twitter:description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><link rel="canonical" href="https://www.tecchen.xyz/"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>Candyメ奶糖的个人博客 – 梦想还是要有的，万一别人问你呢</title><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?8fb973a3a57c67527b32f61e83dcb2ae";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-home"><div class="headband"></div> <a href="https://gitee.com/java4candy/" target="_blank" style="position:absolute;right:0;border:none;z-index:9999"><img src="https://gitee.com/java4candy/data-interaction/widgets/widget_1.svg" alt="Fork me on Gitee"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="https://www.tecchen.xyz" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Candyメ奶糖的个人博客</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">梦想还是要有的，万一别人问你呢</p></div><div class="site-nav-toggle"> <button aria-label="切换导航栏"><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home menu-item-active"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories.html" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags.html" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-cento"><a href="/cento.html" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i><br>摘录</a></li><li class="menu-item menu-item-about"><a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav><div class="quote" style="padding:0 20px"><span class="typed content"></span><span class="typed-cursor typed-cursor--blink"></span></div><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script><script>window.onload=function(){$.ajax({type:"GET",url:"https://api.tecchen.xyz/api/quote/history/random/",success:function(t){if(0==t.code){var e=t.data,o=e.content+"<br />"+e.translation+"<br />——",n={strings:[o+" Who ???^1000",o+" It's Candyメ奶糖^1500",o+" Haha, make a joke~",o+e.author],typeSpeed:35,startDelay:300,onComplete:function(){setTimeout(function(){$(".quote").hide()},5e3)}};new Typed(".quote .typed",n)}}})}</script></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><section id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/idea-crack.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/idea-crack.html" class="post-title-link" itemprop="url">最新版IntelliJ IDEA2019.1破解教程(2019.04.08更新)</a></h1><div class="post-meta"><span class="post-meta-item-icon"><i class="fa fa-thumb-tack"></i></span> <span class="post-meta-item-text">[置顶]</span> <span class="post-meta-divider">|</span><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2018-12-01 20:12" itemprop="dateCreated datePublished" datetime="2018-12-01T20:12:00+00:00">2018-12-01</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery"><div class="post-gallery-row"> <a class="post-gallery-img fancybox" href="https://www.tecchen.xyz/cdn-images/idea-crack-1.jpg" rel="gallery_cjv0834mk000l1o2k7kx77uiq" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"><img src="https://www.tecchen.xyz/cdn-images/idea-crack-1.jpg" itemprop="contentUrl" style="max-width:100%"></a></div><p> 目录 0、打赏记录 1、阿里云服务器广告 2、适用版本（适用于Windows及MacOS系统） 3、下载补丁 4、jetbrains-agent-v1.3.2-release.jar 5、JetbrainsIdesCrack-4.2-release.jar 6、激活成功 7、更改配置【推荐】 部分 ...</p><div class="post-button text-right"> <a class="btn" href="/idea-crack.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/IDE/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> IDE</a><a href="/tags/IDEA/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> IDEA</a><a href="/tags/最新版IDEA破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 最新版IDEA破解教程</a><a href="/tags/IDEA破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> IDEA破解教程</a><a href="/tags/最新版idea破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 最新版idea破解教程</a><a href="/tags/idea破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> idea破解教程</a></div><div></div><footer class="post-footer"></footer></div></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/course-qiniu-ceo.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/course-qiniu-ceo.html" class="post-title-link" itemprop="url">厉害了，七牛云 CEO 来讲架构了！</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-04-12 17:04" itemprop="dateCreated datePublished" datetime="2019-04-12T17:04:24+00:00">2019-04-12</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 说起许式伟，你应该不陌生，他是七牛云的CEO，ECUG 社区发起人，国内 Go 语言圈的领军人物，曾就职于金山、盛大，有超过 10 年的搜索和分布式存储相关技术的研发经验。他的个人经历颇为传奇，大学时外号“ C 狂”，凭一份在招聘现场临时写就的简历，成功应聘金山，毕业仅 2 年就成为了首席架构师，主 ...</p><div class="post-button text-right"> <a class="btn" href="/course-qiniu-ceo.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 教程</a><a href="/tags/极客时间/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 极客时间</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/course-java-gupao.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/course-java-gupao.html" class="post-title-link" itemprop="url">高级架构师全套课程（咕泡）</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-04-12 14:47" itemprop="dateCreated datePublished" datetime="2019-04-12T14:47:30+00:00">2019-04-12</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 高级架构师全套课程（咕泡）百度网盘分享链接: https://pan.baidu.com/s/1yFtiPsIcDGFyELJHl4wjQg视频也是从网上找了好久才找的的。我还没有看过，不过同事说高级教程还不错。就想拿出来分享给大家，具体的提取码还需要大家打赏后发送邮件到server.tec@qq. ...</p><div class="post-button text-right"> <a class="btn" href="/course-java-gupao.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 教程</a><a href="/tags/咕泡学院/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 咕泡学院</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/springboot-fileupload.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/springboot-fileupload.html" class="post-title-link" itemprop="url">SpringBoot上传图片踩的坑</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-04-09 10:19" itemprop="dateCreated datePublished" datetime="2019-04-09T10:19:01+00:00">2019-04-09</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 最近项目里面有个需求，要上传图片到阿里云的OSS服务。所以需要写个上传图片的接口给前端。这个简单的接口本来就给分配了1个工时，感觉也蛮简单的。但编码过程中遇到了好几个问题，现在一一记录下来，避免再次踩坑。 1、图片不能超过1M报错信息：org.springframework.web.multipa ...</p><div class="post-button text-right"> <a class="btn" href="/springboot-fileupload.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> SpringBoot</a><a href="/tags/spring-boot/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> spring boot</a><a href="/tags/文件上传/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 文件上传</a><a href="/tags/上传文件/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 上传文件</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/markdown-commonmark.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/markdown-commonmark.html" class="post-title-link" itemprop="url">markdown语法学习-commonmark</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-04-09 10:17" itemprop="dateCreated datePublished" datetime="2019-04-09T10:17:29+00:00">2019-04-09</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> CommonMark是markdown的解析器，以下是部分学习链接： commonmark规范https://spec.commonmark.org/ commonmark帮助https://commonmark.org/help/ commonmark教程https://commonmark.o ...</p><div class="post-button text-right"> <a class="btn" href="/markdown-commonmark.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/markdown/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> markdown</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/collection-arraylist.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/collection-arraylist.html" class="post-title-link" itemprop="url">Java集合类-ArrayList源码解析</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-04-02 16:37" itemprop="dateCreated datePublished" datetime="2019-04-02T16:37:39+00:00">2019-04-02</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JDK源码/" itemprop="url" rel="index"><span itemprop="name">JDK源码</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 看JDK源码，个人感觉可以从属性、构造方法、常用方法着手，再通篇学习源码。JDK：1.8.0_121Idea：2018.3.4 简介ArrayList是一个容量动态扩张的集合，实现了RandomAccess接口，支持随机访问，初始容量10，最大容量Integer.MAX_VALUE - 8（21 ...</p><div class="post-button text-right"> <a class="btn" href="/collection-arraylist.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/Java集合类/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> Java集合类</a><a href="/tags/ArrayList/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> ArrayList</a><a href="/tags/源码解析/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 源码解析</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/thread-join.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/thread-join.html" class="post-title-link" itemprop="url">我也学习JAVA多线程-join</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-03-15 16:48" itemprop="dateCreated datePublished" datetime="2019-03-15T16:48:00+00:00">2019-03-15</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我也学习JAVA多线程/" itemprop="url" rel="index"><span itemprop="name">我也学习JAVA多线程</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 在工作中，挺少遇到join关键字，但很多多线程资料和面试过程中，初中级开发工程师总会遇到join。今天一起学习下join。join的作用：等待指定的时间（当为0时，一直等待），直到这个线程执行结束。先看join方法的定义，join是java.lang.Thread的一个普通方法。package ja ...</p><div class="post-button text-right"> <a class="btn" href="/thread-join.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/多线程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 多线程</a><a href="/tags/join/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> join</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/request-getsession.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/request-getsession.html" class="post-title-link" itemprop="url">request.getSession(true/false)的区别</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-02-26 10:15" itemprop="dateCreated datePublished" datetime="2019-02-26T10:15:29+00:00">2019-02-26</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> javax.servlet.http.HttpServletRequest接口有两个方法：getSession(boolean)和getSession()。具体什么区别，跟踪源码分析下，先摆出结论：request.getSession(true)：获取session,如果session不存在，就新建 ...</p><div class="post-button text-right"> <a class="btn" href="/request-getsession.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/Session/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> Session</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/rest-template-messycode.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/rest-template-messycode.html" class="post-title-link" itemprop="url">RestTemplate--解决中文乱码</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-02-18 11:10" itemprop="dateCreated datePublished" datetime="2019-02-18T11:10:43+00:00">2019-02-18</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 在开发扇贝-每日一句时，使用RestTemplate请求扇贝接口，并保存返回的数据。原本正常的代码，经过架构升级后，请求接口时，会返回乱码数据。经过直接访问接口等形式，最终确认是RestTemplate这个bean有问题。对RestTemplate的声明也比较简单，通过对apache的httpcli ...</p><div class="post-button text-right"> <a class="btn" href="/rest-template-messycode.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/RestTemplate/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> RestTemplate</a></div><div></div><footer class="post-footer"></footer></div></article><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://www.tecchen.xyz/nginx-location.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="TEC-CHEN"><meta itemprop="description" content="Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~"><meta itemprop="image" content="https://www.tecchen.xyz/cdn-images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Candyメ奶糖的个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> <a href="/nginx-location.html" class="post-title-link" itemprop="url">nginx location配置详细解释</a></h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-02-14 13:00" itemprop="dateCreated datePublished" datetime="2019-02-14T13:00:00+00:00">2019-02-14</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/服务器/" itemprop="url" rel="index"><span itemprop="name">服务器</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><p> 语法规则location [=|~|~*|^~] /uri/ { … } = 开头表示精确匹配 ^~ 开头表示uri以某个常规字符串开头，理解为匹配 url路径即可。nginx不对url做编码，因此请求为/static/20%/aa，可以被规则^~ /static/ /aa匹配到（注意是空格）。以 ...</p><div class="post-button text-right"> <a class="btn" href="/nginx-location.html" rel="contents">阅读全文 &raquo;</a></div></div><div class="post-tags index-tags"><a href="/tags/nginx/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> nginx</a><a href="/tags/location/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> location</a></div><div></div><footer class="post-footer"></footer></div></article></section><nav class="pagination"> <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a></nav></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div id="sidebar-dimmer"></div><div class="sidebar-inner"><div class="site-overview-wrap sidebar-panel sidebar-panel-active"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <a href="https://www.tecchen.xyz"><img class="site-author-image" itemprop="image" src="https://www.tecchen.xyz/cdn-images/avatar.png" alt="TEC-CHEN"></a><p class="site-author-name" itemprop="name">Candyメ奶糖</p><p class="site-description motion-element" itemprop="description">Candyメ奶糖的个人博客，主要记录、分享在工作中积累的些许经验，希望能帮助到你~</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">17</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories.html"><span class="site-state-item-count">8</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags.html"><span class="site-state-item-count">31</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://gitlab.com/java4candy" title="Gitlab &rarr; https://gitlab.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i> Gitlab</a></span><span class="links-of-author-item"><a href="https://gitee.com/java4candy" title="Gitee &rarr; https://gitee.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-paper-plane-o"></i> Gitee</a></span><span class="links-of-author-item"><a href="https://github.com/java4candy" title="GitHub &rarr; https://github.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="https://www.cnblogs.com/candies" title="博客园 &rarr; https://www.cnblogs.com/candies" rel="noopener" target="_blank"><i class="fa fa-fw fa-paper-plane-o"></i> 博客园</a></span><span class="links-of-author-item"><a href="mailto:tecchen@aliyun.com" title="阿里云邮箱 &rarr; mailto:tecchen@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i> 阿里云邮箱</a></span><span class="links-of-author-item"><a href="mailto:359031282@qq.com" title="QQ邮箱 &rarr; mailto:359031282@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i> QQ邮箱</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-block"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-link"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"> <a href="https://www.cnblogs.com/candies" title="https://www.cnblogs.com/candies" rel="noopener" target="_blank">Candyメ奶糖</a></li></ul></div></div></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">鲁ICP备19001038号</a> &copy; 2018 – <span itemprop="copyrightYear">2019</span><span class="with-love" id="animate"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">TEC-CHEN</span></div><div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div> <span class="post-meta-divider">|</span><i class="fa fa-hourglass-start"></i><span id="sitetime"></span><script language="javascript">function siteTime(){window.setTimeout("siteTime()",1e3);var e=36e5,t=24*e,o=new Date,i=o.getFullYear(),a=o.getMonth()+1,n=o.getDate(),r=o.getHours(),l=o.getMinutes(),s=o.getSeconds(),M=Date.UTC(2018,12,1,0,0,0),g=Date.UTC(i,a,n,r,l,s)-M,m=Math.floor(g/31536e6),T=Math.floor(g/t-365*m),f=Math.floor((g-(365*m+T)*t)/e),h=Math.floor((g-(365*m+T)*t-f*e)/6e4),u=" 本站已运行";0<m&&(u+=m+" 年 "),u+=T+" 天 "+f+" 小时 "+h+" 分钟 "+Math.floor((g-(365*m+T)*t-f*e-6e4*h)/1e3)+" 秒",document.getElementById("sitetime").innerHTML=u}siteTime()</script><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item-icon"><i class="fa fa-user"></i></span><span class="site-uv" title="总访客量"><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="site-pv" title="总访问量"><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script><script src="//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js"></script><script src="//cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js"></script><script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script><script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script><script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script><script src="/js/src/utils.js?v=6.7.0"></script><script src="/js/src/motion.js?v=6.7.0"></script><script src="/js/src/bootstrap.js?v=6.7.0"></script><script>
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+<meta name="keywords" content="跑码场,TEC,tecchen,tecchen.xyz,www.tecchen.xyz,blog.tecchen.xyz,Candyメ奶糖,TEC-CHEN,TEC-9,TEC-NINE,java4candy,candy4java">
+<meta property="og:type" content="website">
+<meta property="og:title" content="跑码场 | TEC-9的个人博客">
+<meta property="og:url" content="https://blog.tecchen.xyz/index.html">
+<meta property="og:site_name" content="跑码场 | TEC-9的个人博客">
+<meta property="og:description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跑码场 | TEC-9的个人博客">
+<meta name="twitter:description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+
+
+
+
+
+
+  <link rel="canonical" href="https://blog.tecchen.xyz/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>跑码场 | TEC-9的个人博客 – 梦想还是要有的，万一别人问你呢</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8fb973a3a57c67527b32f61e83dcb2ae";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+    <a href="https://gitee.com/java4candy/" target="_blank" style="position: absolute; right:0px; border: none; z-index: 9999">
+				<img src="https://gitee.com/java4candy/data-interaction/widgets/widget_1.svg" alt="Fork me on Gitee">
+				
+			</a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://blog.tecchen.xyz" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">跑码场 | TEC-9的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">梦想还是要有的，万一别人问你呢</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>博客首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories.html" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags.html" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签云</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-cento">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/cento.html" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>摘录</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-homepage">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://www.tecchen.xyz" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-desktop"></i> <br>个人主页</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+<div class="quote" style="padding:0 20px">
+  <span class="typed content"></span>
+  <span class="typed-cursor typed-cursor--blink"></span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script>
+window.onload = function() {
+    $.ajax({
+        type: 'GET',
+        url: "/api/quote/history/random/",
+        success: function (result) {
+            if (result.code == 0) {
+                var data = result.data;
+                var str = data.content + '<br />' + data.translation + "<br />——"
+                var options = {
+                    strings: [
+                        str + " Who ???^1000",
+                        str + " It's Candyメ奶糖^1500",
+                        str + ' Haha, make a joke~',
+                        str + data.author,
+                    ],
+                    typeSpeed: 35,
+                    startDelay: 300,
+                    onComplete: function() {
+                      setTimeout(function(){
+                        $(".quote").hide();
+                      }, 5000);
+                    }
+                }
+                var typed = new Typed(".quote .typed", options);
+            }
+        }
+    });
+ }
+</script>
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/idea-crack.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/idea-crack.html" class="post-title-link" itemprop="url">最新版IntelliJ IDEA2019 破解教程(2019.08.07-情人节更新)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item-icon">
+            <i class="fa fa-thumb-tack"></i>
+            </span>
+            <span class="post-meta-item-text">[置顶]</span>            
+            <span class="post-meta-divider">|</span>
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-01 20:12" itemprop="dateCreated datePublished" datetime="2018-12-01T20:12:00+00:00">2018-12-01</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://cdn.tecchen.xyz/idea-crack-1.jpg" rel="gallery_cjz7t8tgb000q1v2knyi21muw" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://cdn.tecchen.xyz/idea-crack-1.jpg" itemprop="contentUrl" style="max-width: 100%;">
+              </a>
+            
+          
+
+          
+          
+        </div>
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              扫码加入【CTO技术讨论群】
+目录
+0、打赏记录
+1、阿里云服务器广告
+2、适用版本（适用于Windows及MacOS系统）
+3、下载补丁
+4、JetbrainsIdesCrack-4.2-release.jar
+5、JetbrainsIdesCrack.jar
+6、激活成功
+7、更改配置【推荐】
+
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/idea-crack.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/IDE/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> IDE</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/IDEA/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> IDEA</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/最新版IDEA破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 最新版IDEA破解教程</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/IDEA破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> IDEA破解教程</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/最新版idea破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 最新版idea破解教程</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/idea破解教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> idea破解教程</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </div></article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/periodicTable.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/periodicTable.html" class="post-title-link" itemprop="url">超酷的元素周期表</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-20 08:07" itemprop="dateCreated datePublished" datetime="2019-07-20T08:07:25+00:00">2019-07-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              官方演示地址：【http://www.hewebgl.com/code/show/4.html】
+对于一个后端Java开发来说，炫酷的网页是非常有吸引力的。各种特效、动态效果也很容易吸引住网友的注意力。最近一直想给自己的博客【www.tecchen.xyz】 做个独立的主页， 博客仅仅作为其中的一个
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/periodicTable.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/three-js/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> three.js</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/webgl/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> webgl</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/超酷的元素周期表/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 超酷的元素周期表</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/periodic-table/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> periodic table</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/css3d/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> css3d</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/singlepoint-lock.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/singlepoint-lock.html" class="post-title-link" itemprop="url">singlepoint-lock</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 17:18" itemprop="dateCreated datePublished" datetime="2019-07-12T17:18:42+00:00">2019-07-12</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/singlepoint-lock.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/springmvc-pathVariable.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/springmvc-pathVariable.html" class="post-title-link" itemprop="url">SpringMVC的@PathVariable中的特殊符号</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 16:16" itemprop="dateCreated datePublished" datetime="2019-07-12T16:16:57+00:00">2019-07-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常开发笔记/" itemprop="url" rel="index"><span itemprop="name">日常开发笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              下载文件中遇到的扩展名，即：@PathVariable中的特殊符号
+背景同事在开发业务功能时，遇到一个pdf下载的需求：列表查询返回数据后，点击【生成PDF】按钮，调用后台生成PDF的接口，上传到阿里云的OSS后，返回PDF的URL链接。用户根据自身需要，觉得是否下载PDF文件。在和前端联调时，前端
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/springmvc-pathVariable.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/下载文件/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 下载文件</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/文件下载/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 文件下载</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/PathVariable/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> PathVariable</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/lambda-stream.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/lambda-stream.html" class="post-title-link" itemprop="url">lambda及stream使用技巧</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-11 15:39" itemprop="dateCreated datePublished" datetime="2019-07-11T15:39:37+00:00">2019-07-11</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              这里不阐述lambda、stream及@FunctionalInterface的原理及用途，仅仅整理日常开发过程中的使用技巧，自己当做记录，也分享给大家。
+集合去重及排序customerList = customerList.stream().collect(Collectors.toMap(Cus
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/lambda-stream.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/lambda/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> lambda</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/stream/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> stream</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/mcu-order.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/mcu-order.html" class="post-title-link" itemprop="url">22部漫威电影大合集和观影顺序</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-11 15:10" itemprop="dateCreated datePublished" datetime="2019-07-11T15:10:54+00:00">2019-07-11</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/电影/" itemprop="url" rel="index"><span itemprop="name">电影</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              ##北美上映时间先后《钢铁侠》（2008年）《无敌浩克》（2008年）《钢铁侠2》（2010年）《雷神》（2011年）《美国队长：复仇者先锋》（2011年）《复仇者联盟》（2012年）《钢铁侠3》（2013年）《雷神2：黑暗世界》（2013年）《美国队长2：冬日战士》（2014年）《银河护卫队》（2
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/mcu-order.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/漫威电影/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 漫威电影</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/漫威宇宙/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 漫威宇宙</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/漫威/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 漫威</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/study-experience-wjz.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/study-experience-wjz.html" class="post-title-link" itemprop="url">全国优秀教师，人大附中数学老师王金战教育经验总结</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-05 14:00" itemprop="dateCreated datePublished" datetime="2019-07-05T14:00:04+00:00">2019-07-05</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              一个班主任给家长发了一则短信：
+不管成绩怎样，没有什么优生差生的区别。
+家长们知道，每一个小孩都是种子，只是每个人花期不同，有的花一开始，就绚丽绽放；而有的花， 却需要漫长的等待。
+不要紧盯别人的花，不要觉得别人家的永远都是好。
+相信花有自己的花期，细心呵护，看着他一点点地成长，这何尝不是一种幸福。
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/study-experience-wjz.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/王金战/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 王金战</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/教育经验/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 教育经验</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/fileupload-fileinput-easyexcel-xml.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/fileupload-fileinput-easyexcel-xml.html" class="post-title-link" itemprop="url">TestLink在线Excel用例转换xml</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 10:16" itemprop="dateCreated datePublished" datetime="2019-07-04T10:16:52+00:00">2019-07-04</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://blog.tecchen.xyz/fileupload-fileinput-easyexcel-xml/20190704102520.png" rel="gallery_cjz7t8tfo000j1v2kywf2mhlu" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://blog.tecchen.xyz/fileupload-fileinput-easyexcel-xml/20190704102520.png" itemprop="contentUrl" style="max-width: 100%;">
+              </a>
+            
+          
+
+          
+          
+        </div>
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              Git仓库地址：【TestLink-SpringBoot使用EasyExcel和BootStrap FileInput上传Excel】
+项目功能TestLink在线Excel用例转换xml将符合用例模板的Excel测试用例，转换成xml，用于导入TestLink进行用例管理。
+使用方法
+1、编写测试
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/fileupload-fileinput-easyexcel-xml.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> SpringBoot</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/文件上传/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 文件上传</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/easyexcel/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> easyexcel</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/fileinput/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> fileinput</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/xml/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> xml</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </div></article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/course-qiniu-ceo.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/course-qiniu-ceo.html" class="post-title-link" itemprop="url">厉害了，七牛云 CEO 来讲架构了！</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-12 17:04" itemprop="dateCreated datePublished" datetime="2019-04-12T17:04:24+00:00">2019-04-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              说起许式伟，你应该不陌生，他是七牛云的CEO，ECUG 社区发起人，国内 Go 语言圈的领军人物，曾就职于金山、盛大，有超过 10 年的搜索和分布式存储相关技术的研发经验。他的个人经历颇为传奇，大学时外号“ C 狂”，凭一份在招聘现场临时写就的简历，成功应聘金山，毕业仅 2 年就成为了首席架构师，主
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/course-qiniu-ceo.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 教程</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/极客时间/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 极客时间</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/course-java-gupao.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/course-java-gupao.html" class="post-title-link" itemprop="url">高级架构师全套课程（咕泡）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-12 14:47" itemprop="dateCreated datePublished" datetime="2019-04-12T14:47:30+00:00">2019-04-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        
+          
+            <p>
+              高级架构师全套课程（咕泡）百度网盘分享链接: https://pan.baidu.com/s/1yFtiPsIcDGFyELJHl4wjQg视频也是从网上找了好久才找的的。我看了一部分，感觉不同，同事也说高级教程值得一看。所以拿出来分享给大家，具体的提取码还需要大家打赏后发送邮件到server.te
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-right">
+              <a class="btn" href="/course-java-gupao.html" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+      <div class="post-tags index-tags">
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/教程/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 教程</a>
+        
+          <!-- fa-tags fa-tag -->
+          <a href="/tags/咕泡学院/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 咕泡学院</a>
+        
+      </div>
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <!-- EOF -->
+    <div>
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+        <div class="post-eof"></div>
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+             <!-- 点击头像 跳转到首页 -->
+             <a href="https://blog.tecchen.xyz">
+                <img class="site-author-image" itemprop="image" src="https://cdn.tecchen.xyz/avatar.png" alt="TEC-CHEN">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">Candyメ奶糖</p>
+              <p class="site-description motion-element" itemprop="description">TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://gitlab.com/java4candy" title="Gitlab &rarr; https://gitlab.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i>Gitlab</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://gitee.com/java4candy" title="Gitee &rarr; https://gitee.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-paper-plane-o"></i>Gitee</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/java4candy" title="GitHub &rarr; https://github.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.cnblogs.com/candies" title="博客园 &rarr; https://www.cnblogs.com/candies" rel="noopener" target="_blank"><i class="fa fa-fw fa-paper-plane-o"></i>博客园</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:tecchen@aliyun.com" title="阿里云邮箱 &rarr; mailto:tecchen@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>阿里云邮箱</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:359031282@qq.com" title="QQ邮箱 &rarr; mailto:359031282@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>QQ邮箱</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/candies" title="https://www.cnblogs.com/candies" rel="noopener" target="_blank">Candyメ奶糖</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">鲁ICP备19001038号 </a>&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEC-CHEN</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+
+
+<!-- 运行时间 -->
+<span class="post-meta-divider">|</span>
+<i class="fa fa-hourglass-start"></i>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var t1 = Date.UTC(2018,12,01,00,00,00); // 设置建立网站的时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    var text =" 本站已运行";
+    if (diffYears > 0) {
+      text += diffYears+" 年 ";
+    }
+
+    text += diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
+    document.getElementById("sitetime").innerHTML= text;
+  }
+  siteTime();
+</script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -316,4 +3283,114 @@
         onPopupClose();
       }
     });
-  </script><style>.copy-btn{display:inline-block;padding:6px 12px;font-size:13px;font-weight:700;line-height:20px;color:#333;white-space:nowrap;vertical-align:middle;cursor:pointer;background-color:#eee;background-image:linear-gradient(#fcfcfc,#eee);border:1px solid #d5d5d5;border-radius:3px;user-select:none;outline:0}.highlight-wrap .copy-btn{transition:opacity .3s ease-in-out;opacity:0;padding:2px 6px;position:absolute;right:4px;top:8px}.highlight-wrap .copy-btn:focus,.highlight-wrap:hover .copy-btn{opacity:1}.highlight-wrap{position:relative}</style><script>$(".highlight").each(function(e,t){var n=$("<div>").addClass("highlight-wrap");$(t).after(n),n.append($("<button>").addClass("copy-btn").append("复制").on("click",function(e){var t=$(this).parent().find(".code").find(".line").map(function(e,t){return $(t).text()}).toArray().join("\n"),n=document.createElement("textarea"),o=document.createRange(),a=window.getSelection(),i=window.pageYOffset||document.documentElement.scrollTop;n.style.top=i+"px",n.style.position="absolute",n.style.opacity="0",n.value=t,n.textContent=t,n.contentEditable=!0,n.readOnly=!1,document.body.appendChild(n),o.selectNode(n),a.removeAllRanges(),a.addRange(o),n.setSelectionRange(0,t.length),document.execCommand("copy")?$(this).text("复制成功"):$(this).text("复制失败"),n.blur(),$(this).blur()})).on("mouseleave",function(e){var t=$(this).find(".copy-btn");setTimeout(function(){t.text("复制")},300)}).append(t)})</script></body></html>
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

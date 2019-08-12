@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="https://cdn.tecchen.xyz/favicon.ico?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="官方演示地址：【http://www.hewebgl.com/code/show/4.html】 对于一个后端Java开发来说，炫酷的网页是非常有吸引力的。各种特效、动态效果也很容易吸引住网友的注意力。最近一直想给自己的博客【www.tecchen.xyz】 做个独立的主页， 博客仅仅作为其中的一个栏目，所以搜索了各种个人网站的首页演示效果、代码及其他大神的博客和主页。在看到webgl和three">
+<meta name="keywords" content="three.js,webgl,超酷的元素周期表,periodic table,css3d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超酷的元素周期表">
+<meta property="og:url" content="https://blog.tecchen.xyz/periodicTable.html">
+<meta property="og:site_name" content="跑码场 | TEC-9的个人博客">
+<meta property="og:description" content="官方演示地址：【http://www.hewebgl.com/code/show/4.html】 对于一个后端Java开发来说，炫酷的网页是非常有吸引力的。各种特效、动态效果也很容易吸引住网友的注意力。最近一直想给自己的博客【www.tecchen.xyz】 做个独立的主页， 博客仅仅作为其中的一个栏目，所以搜索了各种个人网站的首页演示效果、代码及其他大神的博客和主页。在看到webgl和three">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-12T03:00:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="超酷的元素周期表">
+<meta name="twitter:description" content="官方演示地址：【http://www.hewebgl.com/code/show/4.html】 对于一个后端Java开发来说，炫酷的网页是非常有吸引力的。各种特效、动态效果也很容易吸引住网友的注意力。最近一直想给自己的博客【www.tecchen.xyz】 做个独立的主页， 博客仅仅作为其中的一个栏目，所以搜索了各种个人网站的首页演示效果、代码及其他大神的博客和主页。在看到webgl和three">
+
+
+
+
+
+
+  <link rel="canonical" href="https://blog.tecchen.xyz/periodicTable.html">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>超酷的元素周期表 | 跑码场 | TEC-9的个人博客</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8fb973a3a57c67527b32f61e83dcb2ae";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://gitee.com/java4candy/" target="_blank" style="position: absolute; right:0px; border: none; z-index: 9999">
+				<img src="https://gitee.com/java4candy/data-interaction/widgets/widget_1.svg" alt="Fork me on Gitee">
+				
+			</a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://blog.tecchen.xyz" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">跑码场 | TEC-9的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">梦想还是要有的，万一别人问你呢</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>博客首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories.html" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags.html" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签云</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-cento">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/cento.html" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>摘录</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-homepage">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://www.tecchen.xyz" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-desktop"></i> <br>个人主页</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.tecchen.xyz/periodicTable.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEC-CHEN">
+      <meta itemprop="description" content="TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~">
+      <meta itemprop="image" content="https://cdn.tecchen.xyz/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跑码场 | TEC-9的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">超酷的元素周期表
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-20 08:07" itemprop="dateCreated datePublished" datetime="2019-07-20T08:07:25+00:00">2019-07-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          <!-- 热度不能在首页和文章都展示，应该是取的当前的网址 -->
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             热度： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+            <!-- 热度 -->
+            <span>℃</span> 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      <!-- 文章不展示缩略图 -->
+      
+
+      
+      <!-- photos只展示在内容 -->
+      
+
+      
+        <p>官方演示地址：【<a href="http://www.hewebgl.com/code/show/4.html】" target="_blank" rel="noopener">http://www.hewebgl.com/code/show/4.html】</a></p>
+<p>对于一个后端Java开发来说，炫酷的网页是非常有吸引力的。各种特效、动态效果也很容易吸引住网友的注意力。<br>最近一直想给自己的博客【<a href="https://www.tecchen.xyz" target="_blank" rel="noopener">www.tecchen.xyz</a>】 做个独立的主页， 博客仅仅作为其中的一个栏目，所以搜索了各种个人网站的首页演示效果、代码及其他大神的博客和主页。<br>在看到webgl和three.js时，对其中的特效很感兴趣，就copy了官方演示效果的【<a href="http://www.hewebgl.com/code/show/4.html】" target="_blank" rel="noopener">http://www.hewebgl.com/code/show/4.html】</a> 源码，并参考【TWaver版3D化学元素周期表-<a href="https://www.cnblogs.com/twaver/p/3842177.html】" target="_blank" rel="noopener">https://www.cnblogs.com/twaver/p/3842177.html】</a> 的效果，得到了下面的代码。  </p>
+<h4 id="个人代码演示地址"><a href="#个人代码演示地址" class="headerlink" title="个人代码演示地址"></a>个人代码演示地址</h4><p><a href="http://show.tecchen.xyz/periodicTable.html" target="_blank" rel="noopener">http://show.tecchen.xyz/periodicTable.html</a></p>
+<h4 id="TODO工作"><a href="#TODO工作" class="headerlink" title="TODO工作"></a>TODO工作</h4><ul>
+<li>1、一字长蛇特效</li>
+<li>2、点击翻转特效（参考轻松一下效果）</li>
+<li>3、双击放大特效</li>
+<li>4、点击打开链接效果</li>
+<li>5、实战（个人网站首页）</li>
+<li>6、元素中文及读音（已完成）</li>
+</ul>
+<h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>超酷的元素周期表 periodic table - three.js css3d<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        body &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">            font-family: Monospace;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            line-height: 24px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        a &#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#ff0</span>;</span></span><br><span class="line">            text-decoration: none;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line">            text-decoration: underline;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        button &#123;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">            text-transform: uppercase;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        canvas &#123;</span><br><span class="line">            display: block;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-id">#info</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0px;</span><br><span class="line">            width: 100%;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            box-sizing: border-box;</span><br><span class="line">            text-align: center;</span><br><span class="line">            z-index: 1;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.dg</span><span class="selector-class">.ac</span> &#123;</span></span><br><span class="line">            z-index: 2 !important;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        a &#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#8ff</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-id">#menu</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            bottom: 20px;</span><br><span class="line">            width: 100%;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span> &#123;</span></span><br><span class="line">            width: 120px;</span><br><span class="line">            height: 160px;</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 12<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0, 255, 255, 0<span class="selector-class">.5</span>);</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.25</span>);</span></span><br><span class="line">            font-family: Helvetica, sans-serif;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: normal;</span><br><span class="line">            cursor: default;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 12<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span> <span class="selector-class">.name</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 18px;</span><br><span class="line">            left: 20px;</span><br><span class="line">            font-size: 12px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span> <span class="selector-class">.pronunciation</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 20px;</span><br><span class="line">            left: 45px;</span><br><span class="line">            font-size: 12px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span> <span class="selector-class">.number</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 20px;</span><br><span class="line">            right: 20px;</span><br><span class="line">            font-size: 12px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span> <span class="selector-class">.symbol</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 40px;</span><br><span class="line">            left: 0px;</span><br><span class="line">            right: 0px;</span><br><span class="line">            font-size: 60px;</span><br><span class="line">            font-weight: bold;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-tag">rgba</span>(255, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line"><span class="css">            <span class="selector-tag">text-shadow</span>: 0 0 10<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0, 255, 255, 0<span class="selector-class">.95</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.element</span> <span class="selector-class">.details</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            bottom: 15px;</span><br><span class="line">            left: 0px;</span><br><span class="line">            right: 0px;</span><br><span class="line">            font-size: 12px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        button &#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">            background: transparent;</span><br><span class="line"><span class="css">            <span class="selector-tag">outline</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgba</span>(127, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">            border: 0px;</span><br><span class="line">            padding: 5px 10px;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-tag">button</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(0, 255, 255, 0<span class="selector-class">.5</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-tag">button</span><span class="selector-pseudo">:active</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#000000</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(0, 255, 255, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://threejs.org/examples/js/libs/tween.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"info"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://threejs.org"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">rel</span>=<span class="string">"noopener"</span>&gt;</span>three.js<span class="tag">&lt;/<span class="name">a</span>&gt;</span> css3d - 超酷的元素周期表 periodic table.</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"menu"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"table"</span>&gt;</span>表格方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"sphere"</span>&gt;</span>球形方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"helix"</span>&gt;</span>螺旋方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"grid"</span>&gt;</span>网格方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"snake"</span>&gt;</span>一字长蛇<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> * <span class="keyword">as</span> THREE <span class="keyword">from</span> <span class="string">'https://threejs.org/build/three.module.js'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; TrackballControls &#125; <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/controls/TrackballControls.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; CSS3DRenderer, CSS3DObject &#125; <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/renderers/CSS3DRenderer.js'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> table = [</span></span><br><span class="line"><span class="actionscript">        <span class="string">"1"</span>, <span class="string">"氢"</span>, <span class="string">"(qīng)"</span>,     <span class="string">"H"</span>, <span class="string">"Hydrogen"</span>, <span class="string">"1.00794"</span>, <span class="number">1</span>, <span class="number">1</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"2"</span>, <span class="string">"氦"</span>, <span class="string">"(hài)"</span>,     <span class="string">"He"</span>, <span class="string">"Helium"</span>, <span class="string">"4.002602"</span>, <span class="number">18</span>, <span class="number">1</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"3"</span>, <span class="string">"锂"</span>, <span class="string">"(lǐ)"</span>,     <span class="string">"Li"</span>, <span class="string">"Lithium"</span>, <span class="string">"6.941"</span>, <span class="number">1</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"4"</span>, <span class="string">"铍"</span>, <span class="string">"(pí)"</span>,     <span class="string">"Be"</span>, <span class="string">"Beryllium"</span>, <span class="string">"9.012182"</span>, <span class="number">2</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"5"</span>, <span class="string">"硼"</span>, <span class="string">"(péng)"</span>,     <span class="string">"B"</span>, <span class="string">"Boron"</span>, <span class="string">"10.811"</span>, <span class="number">13</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"6"</span>, <span class="string">"碳"</span>, <span class="string">"(tàn)"</span>,     <span class="string">"C"</span>, <span class="string">"Carbon"</span>, <span class="string">"12.0107"</span>, <span class="number">14</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"7"</span>, <span class="string">"氮"</span>, <span class="string">"(dàn)"</span>,     <span class="string">"N"</span>, <span class="string">"Nitrogen"</span>, <span class="string">"14.0067"</span>, <span class="number">15</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"8"</span>, <span class="string">"氧"</span>, <span class="string">"(yǎng)"</span>,     <span class="string">"O"</span>, <span class="string">"Oxygen"</span>, <span class="string">"15.9994"</span>, <span class="number">16</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"9"</span>, <span class="string">"氟"</span>, <span class="string">"(fú)"</span>,     <span class="string">"F"</span>, <span class="string">"Fluorine"</span>, <span class="string">"18.9984032"</span>, <span class="number">17</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"10"</span>, <span class="string">"氖"</span>, <span class="string">"(nǎi)"</span>,     <span class="string">"Ne"</span>, <span class="string">"Neon"</span>, <span class="string">"20.1797"</span>, <span class="number">18</span>, <span class="number">2</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"11"</span>, <span class="string">"钠"</span>, <span class="string">"(nà)"</span>,     <span class="string">"Na"</span>, <span class="string">"Sodium"</span>, <span class="string">"22.98976..."</span>, <span class="number">1</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"12"</span>, <span class="string">"镁"</span>, <span class="string">"(měi)"</span>,     <span class="string">"Mg"</span>, <span class="string">"Magnesium"</span>, <span class="string">"24.305"</span>, <span class="number">2</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"13"</span>, <span class="string">"铝"</span>, <span class="string">"(lǚ)"</span>,     <span class="string">"Al"</span>, <span class="string">"Aluminium"</span>, <span class="string">"26.9815386"</span>, <span class="number">13</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"14"</span>, <span class="string">"硅"</span>, <span class="string">"(guī)"</span>,     <span class="string">"Si"</span>, <span class="string">"Silicon"</span>, <span class="string">"28.0855"</span>, <span class="number">14</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"15"</span>, <span class="string">"磷"</span>, <span class="string">"(lín)"</span>,     <span class="string">"P"</span>, <span class="string">"Phosphorus"</span>, <span class="string">"30.973762"</span>, <span class="number">15</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"16"</span>, <span class="string">"硫"</span>, <span class="string">"(liú)"</span>,     <span class="string">"S"</span>, <span class="string">"Sulfur"</span>, <span class="string">"32.065"</span>, <span class="number">16</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"17"</span>, <span class="string">"氯"</span>, <span class="string">"(lǜ)"</span>,     <span class="string">"Cl"</span>, <span class="string">"Chlorine"</span>, <span class="string">"35.453"</span>, <span class="number">17</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"18"</span>, <span class="string">"氩"</span>, <span class="string">"(yà)"</span>,     <span class="string">"Ar"</span>, <span class="string">"Argon"</span>, <span class="string">"39.948"</span>, <span class="number">18</span>, <span class="number">3</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"19"</span>, <span class="string">"钾"</span>, <span class="string">"(jiǎ)"</span>,     <span class="string">"K"</span>, <span class="string">"Potassium"</span>, <span class="string">"39.948"</span>, <span class="number">1</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"20"</span>, <span class="string">"钙"</span>, <span class="string">"(gài)"</span>,     <span class="string">"Ca"</span>, <span class="string">"Calcium"</span>, <span class="string">"40.078"</span>, <span class="number">2</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"21"</span>, <span class="string">"钪"</span>, <span class="string">"(kàng)"</span>,     <span class="string">"Sc"</span>, <span class="string">"Scandium"</span>, <span class="string">"44.955912"</span>, <span class="number">3</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"22"</span>, <span class="string">"钛"</span>, <span class="string">"(tài)"</span>,     <span class="string">"Ti"</span>, <span class="string">"Titanium"</span>, <span class="string">"47.867"</span>, <span class="number">4</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"23"</span>, <span class="string">"钒"</span>, <span class="string">"(fán)"</span>,     <span class="string">"V"</span>, <span class="string">"Vanadium"</span>, <span class="string">"50.9415"</span>, <span class="number">5</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"24"</span>, <span class="string">"铬"</span>, <span class="string">"(gè)"</span>,     <span class="string">"Cr"</span>, <span class="string">"Chromium"</span>, <span class="string">"51.9961"</span>, <span class="number">6</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"25"</span>, <span class="string">"锰"</span>, <span class="string">"(měng)"</span>,     <span class="string">"Mn"</span>, <span class="string">"Manganese"</span>, <span class="string">"54.938045"</span>, <span class="number">7</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"26"</span>, <span class="string">"铁"</span>, <span class="string">"(tiě)"</span>,     <span class="string">"Fe"</span>, <span class="string">"Iron"</span>, <span class="string">"55.845"</span>, <span class="number">8</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"27"</span>, <span class="string">"钴"</span>, <span class="string">"(gǔ)"</span>,     <span class="string">"Co"</span>, <span class="string">"Cobalt"</span>, <span class="string">"58.933195"</span>, <span class="number">9</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"28"</span>, <span class="string">"镍"</span>, <span class="string">"(niè)"</span>,     <span class="string">"Ni"</span>, <span class="string">"Nickel"</span>, <span class="string">"58.6934"</span>, <span class="number">10</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"29"</span>, <span class="string">"铜"</span>, <span class="string">"(tóng)"</span>,     <span class="string">"Cu"</span>, <span class="string">"Copper"</span>, <span class="string">"63.546"</span>, <span class="number">11</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"30"</span>, <span class="string">"锌"</span>, <span class="string">"(xīn)"</span>,     <span class="string">"Zn"</span>, <span class="string">"Zinc"</span>, <span class="string">"65.38"</span>, <span class="number">12</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"31"</span>, <span class="string">"镓"</span>, <span class="string">"(jiā)"</span>,     <span class="string">"Ga"</span>, <span class="string">"Gallium"</span>, <span class="string">"69.723"</span>, <span class="number">13</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"32"</span>, <span class="string">"锗"</span>, <span class="string">"(zhě)"</span>,     <span class="string">"Ge"</span>, <span class="string">"Germanium"</span>, <span class="string">"72.63"</span>, <span class="number">14</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"33"</span>, <span class="string">"砷"</span>, <span class="string">"(shēn)"</span>,     <span class="string">"As"</span>, <span class="string">"Arsenic"</span>, <span class="string">"74.9216"</span>, <span class="number">15</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"34"</span>, <span class="string">"硒"</span>, <span class="string">"(xī)"</span>,     <span class="string">"Se"</span>, <span class="string">"Selenium"</span>, <span class="string">"78.96"</span>, <span class="number">16</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"35"</span>, <span class="string">"溴"</span>, <span class="string">"(xiù)"</span>,     <span class="string">"Br"</span>, <span class="string">"Bromine"</span>, <span class="string">"79.904"</span>, <span class="number">17</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"36"</span>, <span class="string">"氪"</span>, <span class="string">"(kè)"</span>,     <span class="string">"Kr"</span>, <span class="string">"Krypton"</span>, <span class="string">"83.798"</span>, <span class="number">18</span>, <span class="number">4</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"37"</span>, <span class="string">"铷"</span>, <span class="string">"(rú)"</span>,     <span class="string">"Rb"</span>, <span class="string">"Rubidium"</span>, <span class="string">"85.4678"</span>, <span class="number">1</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"38"</span>, <span class="string">"锶"</span>, <span class="string">"(sī)"</span>,     <span class="string">"Sr"</span>, <span class="string">"Strontium"</span>, <span class="string">"87.62"</span>, <span class="number">2</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"39"</span>, <span class="string">"钇"</span>, <span class="string">"(yǐ)"</span>,     <span class="string">"Y"</span>, <span class="string">"Yttrium"</span>, <span class="string">"88.90585"</span>, <span class="number">3</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"40"</span>, <span class="string">"锆"</span>, <span class="string">"(gào)"</span>,     <span class="string">"Zr"</span>, <span class="string">"Zirconium"</span>, <span class="string">"91.224"</span>, <span class="number">4</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"41"</span>, <span class="string">"铌"</span>, <span class="string">"(ní)"</span>,     <span class="string">"Nb"</span>, <span class="string">"Niobium"</span>, <span class="string">"92.90628"</span>, <span class="number">5</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"42"</span>, <span class="string">"钼"</span>, <span class="string">"(mù)"</span>,     <span class="string">"Mo"</span>, <span class="string">"Molybdenum"</span>, <span class="string">"95.96"</span>, <span class="number">6</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"43"</span>, <span class="string">"锝"</span>, <span class="string">"(dé)"</span>,     <span class="string">"Tc"</span>, <span class="string">"Technetium"</span>, <span class="string">"(98)"</span>, <span class="number">7</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"44"</span>, <span class="string">"钌"</span>, <span class="string">"(liǎo)"</span>,     <span class="string">"Ru"</span>, <span class="string">"Ruthenium"</span>, <span class="string">"101.07"</span>, <span class="number">8</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"45"</span>, <span class="string">"铑"</span>, <span class="string">"(lǎo)"</span>,     <span class="string">"Rh"</span>, <span class="string">"Rhodium"</span>, <span class="string">"102.9055"</span>, <span class="number">9</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"46"</span>, <span class="string">"钯"</span>, <span class="string">"(bǎ)"</span>,     <span class="string">"Pd"</span>, <span class="string">"Palladium"</span>, <span class="string">"106.42"</span>, <span class="number">10</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"47"</span>, <span class="string">"银"</span>, <span class="string">"(yín)"</span>,     <span class="string">"Ag"</span>, <span class="string">"Silver"</span>, <span class="string">"107.8682"</span>, <span class="number">11</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"48"</span>, <span class="string">"镉"</span>, <span class="string">"(gé)"</span>,     <span class="string">"Cd"</span>, <span class="string">"Cadmium"</span>, <span class="string">"112.411"</span>, <span class="number">12</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"49"</span>, <span class="string">"铟"</span>, <span class="string">"(yīn)"</span>,     <span class="string">"In"</span>, <span class="string">"Indium"</span>, <span class="string">"114.818"</span>, <span class="number">13</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"50"</span>, <span class="string">"锡"</span>, <span class="string">"(xī)"</span>,     <span class="string">"Sn"</span>, <span class="string">"Tin"</span>, <span class="string">"118.71"</span>, <span class="number">14</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"51"</span>, <span class="string">"锑"</span>, <span class="string">"(tī)"</span>,     <span class="string">"Sb"</span>, <span class="string">"Antimony"</span>, <span class="string">"121.76"</span>, <span class="number">15</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"52"</span>, <span class="string">"碲"</span>, <span class="string">"(dì)"</span>,     <span class="string">"Te"</span>, <span class="string">"Tellurium"</span>, <span class="string">"127.6"</span>, <span class="number">16</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"53"</span>, <span class="string">"碘"</span>, <span class="string">"(diǎn)"</span>,     <span class="string">"I"</span>, <span class="string">"Iodine"</span>, <span class="string">"126.90447"</span>, <span class="number">17</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"54"</span>, <span class="string">"氙"</span>, <span class="string">"(xiān)"</span>,     <span class="string">"Xe"</span>, <span class="string">"Xenon"</span>, <span class="string">"131.293"</span>, <span class="number">18</span>, <span class="number">5</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"55"</span>, <span class="string">"铯"</span>, <span class="string">"(sè)"</span>,     <span class="string">"Cs"</span>, <span class="string">"Caesium"</span>, <span class="string">"132.9054"</span>, <span class="number">1</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"56"</span>, <span class="string">"钡"</span>, <span class="string">"(bèi)"</span>,     <span class="string">"Ba"</span>, <span class="string">"Barium"</span>, <span class="string">"132.9054"</span>, <span class="number">2</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"57"</span>, <span class="string">"镧"</span>, <span class="string">"(lán)"</span>,      <span class="string">"La"</span>, <span class="string">"Lanthanum"</span>, <span class="string">"138.90547"</span>, <span class="number">4</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"58"</span>, <span class="string">"铈"</span>, <span class="string">"(shì)"</span>,      <span class="string">"Ce"</span>, <span class="string">"Cerium"</span>, <span class="string">"140.116"</span>, <span class="number">5</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"59"</span>, <span class="string">"镨"</span>, <span class="string">"(pǔ)"</span>,      <span class="string">"Pr"</span>, <span class="string">"Praseodymium"</span>, <span class="string">"140.90765"</span>, <span class="number">6</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"60"</span>, <span class="string">"钕"</span>, <span class="string">"(nǚ)"</span>,      <span class="string">"Nd"</span>, <span class="string">"Neodymium"</span>, <span class="string">"144.242"</span>, <span class="number">7</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"61"</span>, <span class="string">"钷"</span>, <span class="string">"(pǒ)"</span>,      <span class="string">"Pm"</span>, <span class="string">"Promethium"</span>, <span class="string">"(145)"</span>, <span class="number">8</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"62"</span>, <span class="string">"钐"</span>, <span class="string">"(shān)"</span>,      <span class="string">"Sm"</span>, <span class="string">"Samarium"</span>, <span class="string">"150.36"</span>, <span class="number">9</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"63"</span>, <span class="string">"铕"</span>, <span class="string">"(yǒu)"</span>,      <span class="string">"Eu"</span>, <span class="string">"Europium"</span>, <span class="string">"151.964"</span>, <span class="number">10</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"64"</span>, <span class="string">"钆"</span>, <span class="string">"(gá)"</span>,      <span class="string">"Gd"</span>, <span class="string">"Gadolinium"</span>, <span class="string">"157.25"</span>, <span class="number">11</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"65"</span>, <span class="string">"铽"</span>, <span class="string">"(tè)"</span>,      <span class="string">"Tb"</span>, <span class="string">"Terbium"</span>, <span class="string">"158.92535"</span>, <span class="number">12</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"66"</span>, <span class="string">"镝"</span>, <span class="string">"(dī)"</span>,      <span class="string">"Dy"</span>, <span class="string">"Dysprosium"</span>, <span class="string">"162.5"</span>, <span class="number">13</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"67"</span>, <span class="string">"钬"</span>, <span class="string">"(huǒ)"</span>,      <span class="string">"Ho"</span>, <span class="string">"Holmium"</span>, <span class="string">"164.93032"</span>, <span class="number">14</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"68"</span>, <span class="string">"铒"</span>, <span class="string">"(ěr)"</span>,      <span class="string">"Er"</span>, <span class="string">"Erbium"</span>, <span class="string">"167.259"</span>, <span class="number">15</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"69"</span>, <span class="string">"铥"</span>, <span class="string">"(diū)"</span>,      <span class="string">"Tm"</span>, <span class="string">"Thulium"</span>, <span class="string">"168.93421"</span>, <span class="number">16</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"70"</span>, <span class="string">"镱"</span>, <span class="string">"(yì)"</span>,      <span class="string">"Yb"</span>, <span class="string">"Ytterbium"</span>, <span class="string">"173.054"</span>, <span class="number">17</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"71"</span>, <span class="string">"镥"</span>, <span class="string">"(lǔ)"</span>,      <span class="string">"Lu"</span>, <span class="string">"Lutetium"</span>, <span class="string">"174.9668"</span>, <span class="number">18</span>, <span class="number">9</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"72"</span>, <span class="string">"铪"</span>, <span class="string">"(hā)"</span>,      <span class="string">"Hf"</span>, <span class="string">"Hafnium"</span>, <span class="string">"178.49"</span>, <span class="number">4</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"73"</span>, <span class="string">"钽"</span>, <span class="string">"(tǎn)"</span>,      <span class="string">"Ta"</span>, <span class="string">"Tantalum"</span>, <span class="string">"180.94788"</span>, <span class="number">5</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"74"</span>, <span class="string">"钨"</span>, <span class="string">"(wū)"</span>,      <span class="string">"W"</span>, <span class="string">"Tungsten"</span>, <span class="string">"183.84"</span>, <span class="number">6</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"75"</span>, <span class="string">"铼"</span>, <span class="string">"(lái)"</span>,      <span class="string">"Re"</span>, <span class="string">"Rhenium"</span>, <span class="string">"186.207"</span>, <span class="number">7</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"76"</span>, <span class="string">"锇"</span>, <span class="string">"(é)"</span>,      <span class="string">"Os"</span>, <span class="string">"Osmium"</span>, <span class="string">"190.23"</span>, <span class="number">8</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"77"</span>, <span class="string">"铱"</span>, <span class="string">"(yī)"</span>,      <span class="string">"Ir"</span>, <span class="string">"Iridium"</span>, <span class="string">"192.217"</span>, <span class="number">9</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"78"</span>, <span class="string">"铂"</span>, <span class="string">"(bó)"</span>,      <span class="string">"Pt"</span>, <span class="string">"Platinum"</span>, <span class="string">"195.084"</span>, <span class="number">10</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"79"</span>, <span class="string">"金"</span>, <span class="string">"(jīn)"</span>,      <span class="string">"Au"</span>, <span class="string">"Gold"</span>, <span class="string">"196.966569"</span>, <span class="number">11</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"80"</span>, <span class="string">"汞"</span>, <span class="string">"(gǒng)"</span>,      <span class="string">"Hg"</span>, <span class="string">"Mercury"</span>, <span class="string">"200.59"</span>, <span class="number">12</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"81"</span>, <span class="string">"铊"</span>, <span class="string">"(tā)"</span>,      <span class="string">"Tl"</span>, <span class="string">"Thallium"</span>, <span class="string">"204.3833"</span>, <span class="number">13</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"82"</span>, <span class="string">"铅"</span>, <span class="string">"(qiān)"</span>,      <span class="string">"Pb"</span>, <span class="string">"Lead"</span>, <span class="string">"207.2"</span>, <span class="number">14</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"83"</span>, <span class="string">"铋"</span>, <span class="string">"(bì)"</span>,      <span class="string">"Bi"</span>, <span class="string">"Bismuth"</span>, <span class="string">"208.9804"</span>, <span class="number">15</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"84"</span>, <span class="string">"钋"</span>, <span class="string">"(pō)"</span>,      <span class="string">"Po"</span>, <span class="string">"Polonium"</span>, <span class="string">"(209)"</span>, <span class="number">16</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"85"</span>, <span class="string">"砹"</span>, <span class="string">"(ài)"</span>,      <span class="string">"At"</span>, <span class="string">"Astatine"</span>, <span class="string">"(210)"</span>, <span class="number">17</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"86"</span>, <span class="string">"氡"</span>, <span class="string">"(dōng)"</span>,      <span class="string">"Rn"</span>, <span class="string">"Radon"</span>, <span class="string">"(222)"</span>, <span class="number">18</span>, <span class="number">6</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"87"</span>, <span class="string">"钫"</span>, <span class="string">"(fāng)"</span>,      <span class="string">"Fr"</span>, <span class="string">"Francium"</span>, <span class="string">"(223)"</span>, <span class="number">1</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"88"</span>, <span class="string">"镭"</span>, <span class="string">"(léi)"</span>,      <span class="string">"Ra"</span>, <span class="string">"Radium"</span>, <span class="string">"(226)"</span>, <span class="number">2</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"89"</span>, <span class="string">"锕"</span>, <span class="string">"(ā)"</span>,         <span class="string">"Ac"</span>, <span class="string">"Actinium"</span>, <span class="string">"(227)"</span>, <span class="number">4</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"90"</span>, <span class="string">"钍"</span>, <span class="string">"(tǔ)"</span>,         <span class="string">"Th"</span>, <span class="string">"Thorium"</span>, <span class="string">"232.03806"</span>, <span class="number">5</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"91"</span>, <span class="string">"镤"</span>, <span class="string">"(pú)"</span>,         <span class="string">"Pa"</span>, <span class="string">"Protactinium"</span>, <span class="string">"231.0588"</span>, <span class="number">6</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"92"</span>, <span class="string">"铀"</span>, <span class="string">"(yóu)"</span>,         <span class="string">"U"</span>, <span class="string">"Uranium"</span>, <span class="string">"238.02891"</span>, <span class="number">7</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"93"</span>, <span class="string">"镎"</span>, <span class="string">"(ná)"</span>,         <span class="string">"Np"</span>, <span class="string">"Neptunium"</span>, <span class="string">"(237)"</span>, <span class="number">8</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"94"</span>, <span class="string">"钚"</span>, <span class="string">"(bù)"</span>,         <span class="string">"Pu"</span>, <span class="string">"Plutonium"</span>, <span class="string">"(244)"</span>, <span class="number">9</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"95"</span>, <span class="string">"镅"</span>, <span class="string">"(méi)"</span>,         <span class="string">"Am"</span>, <span class="string">"Americium"</span>, <span class="string">"(243)"</span>, <span class="number">10</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"96"</span>, <span class="string">"锔"</span>, <span class="string">"(jú)"</span>,         <span class="string">"Cm"</span>, <span class="string">"Curium"</span>, <span class="string">"(247)"</span>, <span class="number">11</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"97"</span>, <span class="string">"锫"</span>, <span class="string">"(péi)"</span>,         <span class="string">"Bk"</span>, <span class="string">"Berkelium"</span>, <span class="string">"(247)"</span>, <span class="number">12</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"98"</span>, <span class="string">"锎"</span>, <span class="string">"(kāi)"</span>,         <span class="string">"Cf"</span>, <span class="string">"Californium"</span>, <span class="string">"(251)"</span>, <span class="number">13</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"99"</span>, <span class="string">"锿"</span>, <span class="string">"(āi)"</span>,         <span class="string">"Es"</span>, <span class="string">"Einstenium"</span>, <span class="string">"(252)"</span>, <span class="number">14</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"100"</span>, <span class="string">"镄"</span>, <span class="string">"(fèi)"</span>,         <span class="string">"Fm"</span>, <span class="string">"Fermium"</span>, <span class="string">"(257)"</span>, <span class="number">15</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"101"</span>, <span class="string">"钔"</span>, <span class="string">"(mén)"</span>,         <span class="string">"Md"</span>, <span class="string">"Mendelevium"</span>, <span class="string">"(258)"</span>, <span class="number">16</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"102"</span>, <span class="string">"锘"</span>, <span class="string">"(nuò)"</span>,         <span class="string">"No"</span>, <span class="string">"Nobelium"</span>, <span class="string">"(259)"</span>, <span class="number">17</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"103"</span>, <span class="string">"铹"</span>, <span class="string">"(láo)"</span>,         <span class="string">"Lr"</span>, <span class="string">"Lawrencium"</span>, <span class="string">"(262)"</span>, <span class="number">18</span>, <span class="number">10</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"104"</span>, <span class="string">"钅卢"</span>, <span class="string">"(lú)"</span>,         <span class="string">"Rf"</span>, <span class="string">"Rutherfordium"</span>, <span class="string">"(267)"</span>, <span class="number">4</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"105"</span>, <span class="string">"钅杜"</span>, <span class="string">"(dù)"</span>,         <span class="string">"Db"</span>, <span class="string">"Dubnium"</span>, <span class="string">"(268)"</span>, <span class="number">5</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"106"</span>, <span class="string">"钅喜"</span>, <span class="string">"(xǐ)"</span>,         <span class="string">"Sg"</span>, <span class="string">"Seaborgium"</span>, <span class="string">"(271)"</span>, <span class="number">6</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"107"</span>, <span class="string">"钅波"</span>, <span class="string">"(bō)"</span>,         <span class="string">"Bh"</span>, <span class="string">"Bohrium"</span>, <span class="string">"(272)"</span>, <span class="number">7</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"108"</span>, <span class="string">"钅黑"</span>, <span class="string">"(hēi)"</span>,         <span class="string">"Hs"</span>, <span class="string">"Hassium"</span>, <span class="string">"(270)"</span>, <span class="number">8</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"109"</span>, <span class="string">"钅麦"</span>, <span class="string">"(mài)"</span>,         <span class="string">"Mt"</span>, <span class="string">"Meitnerium"</span>, <span class="string">"(276)"</span>, <span class="number">9</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"110"</span>, <span class="string">"钅达"</span>, <span class="string">"(dá)"</span>,         <span class="string">"Ds"</span>, <span class="string">"Darmstadium"</span>, <span class="string">"(281)"</span>, <span class="number">10</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"111"</span>, <span class="string">"钅仑"</span>, <span class="string">"(lún)"</span>,         <span class="string">"Rg"</span>, <span class="string">"Roentgenium"</span>, <span class="string">"(280)"</span>, <span class="number">11</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"112"</span>, <span class="string">"钅哥"</span>, <span class="string">"(ge)"</span>,         <span class="string">"Cn"</span>, <span class="string">"Copernicium"</span>, <span class="string">"(285)"</span>, <span class="number">12</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"113"</span>, <span class="string">"钅尔"</span>, <span class="string">"(er)"</span>,         <span class="string">"Nh"</span>, <span class="string">"Nihonium"</span>, <span class="string">"(286)"</span>, <span class="number">13</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"114"</span>, <span class="string">"钅夫"</span>, <span class="string">"(fu)"</span>,         <span class="string">"Fl"</span>, <span class="string">"Flerovium"</span>, <span class="string">"(289)"</span>, <span class="number">14</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"115"</span>, <span class="string">"镆"</span>, <span class="string">"(mò)"</span>,         <span class="string">"Mc"</span>, <span class="string">"Moscovium"</span>, <span class="string">"(290)"</span>, <span class="number">15</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"116"</span>, <span class="string">"鉝"</span>, <span class="string">"(lì)"</span>,         <span class="string">"Lv"</span>, <span class="string">"Livermorium"</span>, <span class="string">"(293)"</span>, <span class="number">16</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"117"</span>, <span class="string">"石田"</span>, <span class="string">"(tían)"</span>,         <span class="string">"Ts"</span>, <span class="string">"Tennessine"</span>, <span class="string">"(294)"</span>, <span class="number">17</span>, <span class="number">7</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="string">"118"</span>, <span class="string">"奥气"</span>, <span class="string">"(aò)"</span>,         <span class="string">"Og"</span>, <span class="string">"Oganesson"</span>, <span class="string">"(294)"</span>, <span class="number">18</span>, <span class="number">7</span></span></span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> camera, scene, renderer;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> controls;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> objects = [];</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> targets = &#123; table: [], sphere: [], helix: [], grid: [], snake: [] &#125;;</span></span><br><span class="line"></span><br><span class="line">    init();</span><br><span class="line">    animate();</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        camera = <span class="keyword">new</span> THREE.PerspectiveCamera(<span class="number">40</span>, <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight, <span class="number">1</span>, <span class="number">10000</span>);</span></span><br><span class="line">        camera.position.z = 3000;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        scene = <span class="keyword">new</span> THREE.Scene();</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">// 表格</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; table.length; i += <span class="number">8</span>) &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            element.className = <span class="string">'element'</span>;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">// element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';</span></span></span><br><span class="line"><span class="javascript">            element.style.backgroundColor = <span class="string">'rgba(12,87,200,'</span> + (<span class="built_in">Math</span>.random() * <span class="number">0.5</span> + <span class="number">0.25</span>) + <span class="string">')'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> id = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            id.className = <span class="string">'id'</span>;</span></span><br><span class="line">            id.textContent = table[i];</span><br><span class="line"><span class="actionscript">            <span class="comment">// element.appendChild( id );</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> name = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            name.className = <span class="string">'name'</span>;</span></span><br><span class="line">            name.textContent = table[i + 1];</span><br><span class="line">            element.appendChild(name);</span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> pronunciation = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            pronunciation.className = <span class="string">'pronunciation'</span>;</span></span><br><span class="line">            pronunciation.textContent = table[i + 2];</span><br><span class="line">            element.appendChild(pronunciation);</span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> number = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            number.className = <span class="string">'number'</span>;</span></span><br><span class="line">            number.textContent = (i / 8) + 1;</span><br><span class="line">            element.appendChild(number);</span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> symbol = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            symbol.className = <span class="string">'symbol'</span>;</span></span><br><span class="line">            symbol.textContent = table[i + 3];</span><br><span class="line">            element.appendChild(symbol);</span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> details = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="actionscript">            details.className = <span class="string">'details'</span>;</span></span><br><span class="line"><span class="actionscript">            details.innerHTML = table[i + <span class="number">4</span>] + <span class="string">'&lt;br&gt;'</span> + table[i + <span class="number">5</span>];</span></span><br><span class="line">            element.appendChild(details);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> object = <span class="keyword">new</span> CSS3DObject(element);</span></span><br><span class="line"><span class="javascript">            object.position.x = <span class="built_in">Math</span>.random() * <span class="number">4000</span> - <span class="number">2000</span>;</span></span><br><span class="line"><span class="javascript">            object.position.y = <span class="built_in">Math</span>.random() * <span class="number">4000</span> - <span class="number">2000</span>;</span></span><br><span class="line"><span class="javascript">            object.position.z = <span class="built_in">Math</span>.random() * <span class="number">4000</span> - <span class="number">2000</span>;</span></span><br><span class="line">            scene.add(object);</span><br><span class="line"></span><br><span class="line">            objects.push(object);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> object = <span class="keyword">new</span> THREE.Object3D();</span></span><br><span class="line">            object.position.x = (table[i + 6] * 140) - 1330;</span><br><span class="line">            object.position.y = -(table[i + 7] * 180) + 990;</span><br><span class="line"></span><br><span class="line">            targets.table.push(object);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">// 球形</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> vector = <span class="keyword">new</span> THREE.Vector3();</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = objects.length; i &lt; l; i++) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> phi = <span class="built_in">Math</span>.acos(<span class="number">-1</span> + (<span class="number">2</span> * i) / l);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> theta = <span class="built_in">Math</span>.sqrt(l * <span class="built_in">Math</span>.PI) * phi;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> object = <span class="keyword">new</span> THREE.Object3D();</span></span><br><span class="line"></span><br><span class="line">            object.position.setFromSphericalCoords(800, phi, theta);</span><br><span class="line"></span><br><span class="line">            vector.copy(object.position).multiplyScalar(2);</span><br><span class="line"></span><br><span class="line">            object.lookAt(vector);</span><br><span class="line"></span><br><span class="line">            targets.sphere.push(object);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">// 螺旋</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> vector = <span class="keyword">new</span> THREE.Vector3();</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = objects.length; i &lt; l; i++) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> theta = i * <span class="number">0.175</span> + <span class="built_in">Math</span>.PI;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> y = -(i * <span class="number">8</span>) + <span class="number">450</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> object = <span class="keyword">new</span> THREE.Object3D();</span></span><br><span class="line"></span><br><span class="line">            object.position.setFromCylindricalCoords(900, theta, y);</span><br><span class="line"></span><br><span class="line">            vector.x = object.position.x * 2;</span><br><span class="line">            vector.y = object.position.y;</span><br><span class="line">            vector.z = object.position.z * 2;</span><br><span class="line"></span><br><span class="line">            object.lookAt(vector);</span><br><span class="line"></span><br><span class="line">            targets.helix.push(object);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">// 网格</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objects.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> object = <span class="keyword">new</span> THREE.Object3D();</span></span><br><span class="line"></span><br><span class="line">            object.position.x = ((i % 5) * 400) - 800;</span><br><span class="line"><span class="javascript">            object.position.y = (-(<span class="built_in">Math</span>.floor(i / <span class="number">5</span>) % <span class="number">5</span>) * <span class="number">400</span>) + <span class="number">800</span>;</span></span><br><span class="line"><span class="javascript">            object.position.z = (-<span class="built_in">Math</span>.floor(i / <span class="number">25</span>)) * <span class="number">1000</span> + <span class="number">2000</span>;</span></span><br><span class="line"></span><br><span class="line">            targets.grid.push(object);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">// </span></span></span><br><span class="line"><span class="actionscript">        renderer = <span class="keyword">new</span> CSS3DRenderer();</span></span><br><span class="line"><span class="javascript">        renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>).appendChild(renderer.domElement);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">//</span></span></span><br><span class="line"><span class="actionscript">        controls = <span class="keyword">new</span> TrackballControls(camera, renderer.domElement);</span></span><br><span class="line">        controls.minDistance = 500;</span><br><span class="line">        controls.maxDistance = 6000;</span><br><span class="line"><span class="actionscript">        controls.addEventListener(<span class="string">'change'</span>, render);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'table'</span>);</span></span><br><span class="line"><span class="actionscript">        button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">            transform(targets.table, 2000);</span><br><span class="line"><span class="actionscript">        &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'sphere'</span>);</span></span><br><span class="line"><span class="actionscript">        button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">            transform(targets.sphere, 2000);</span><br><span class="line"><span class="actionscript">        &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'helix'</span>);</span></span><br><span class="line"><span class="actionscript">        button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">            transform(targets.helix, 2000);</span><br><span class="line"><span class="actionscript">        &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'grid'</span>);</span></span><br><span class="line"><span class="actionscript">        button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">            transform(targets.grid, 2000);</span><br><span class="line"><span class="actionscript">        &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'snake'</span>);</span></span><br><span class="line"><span class="actionscript">        button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">            transform(targets.snake, 2000);</span><br><span class="line"><span class="actionscript">        &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line">        transform(targets.table, 2000);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, onWindowResize, <span class="literal">false</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">transform</span><span class="params">(targets, duration)</span> </span>&#123;</span></span><br><span class="line">        TWEEN.removeAll();</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objects.length; i++) &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> object = objects[i];</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> target = targets[i];</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">new</span> TWEEN.Tween( object.position ).to( &#123; <span class="attr">x</span>: target.position.x, <span class="attr">y</span>: target.position.y, <span class="attr">z</span>: target.position.z&#125;,<span class="built_in">Math</span>.random() * duration + duration ).easing( TWEEN.Easing.Exponential.InOut ).start();</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">new</span> TWEEN.Tween( object.rotation ).to( &#123;<span class="attr">x</span>: target.rotation.x, <span class="attr">y</span>: target.rotation.y, <span class="attr">z</span>: target.rotation.z&#125;,<span class="built_in">Math</span>.random() * duration + duration ).easing( TWEEN.Easing.Exponential.InOut ).start();</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="keyword">new</span> TWEEN.Tween(<span class="keyword">this</span>).to(&#123;&#125;, duration * <span class="number">2</span>).onUpdate(render).start();</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">onWindowResize</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        camera.aspect = <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight;</span></span><br><span class="line">        camera.updateProjectionMatrix();</span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"></span><br><span class="line">        render();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">animate</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line">        requestAnimationFrame(animate);</span><br><span class="line"></span><br><span class="line">        TWEEN.update();</span><br><span class="line"></span><br><span class="line">        controls.update();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">render</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line">        renderer.render(scene, camera);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <!-- 首页的文章tags -->
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢您发财的小手，我们一起进步</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: block;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.tecchen.xyz/wechatpay.jpg" alt="TEC-CHEN 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.tecchen.xyz/alipay.jpg" alt="TEC-CHEN 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+    
+        <div id="zanshangma" style="display: inline-block">
+          <img id="zanshangma_qr" src="https://cdn.tecchen.xyz/wechatpay-zanshangma.png" alt="TEC-CHEN 微信-赞赏码">
+          <p>微信-赞赏码</p>
+        </div>
+    
+
+    
+        <div id="gongzhonghao" style="display: inline-block">
+          <img id="gongzhonghao_qr" src="https://cdn.tecchen.xyz/wechat-gongzhonghao.jpg" alt="TEC-CHEN 公众号">
+          <p>公众号</p>
+        </div>
+    
+
+  </div>
+
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>TEC-CHEN / Candyメ奶糖
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://blog.tecchen.xyz/periodicTable.html" title="超酷的元素周期表">https://blog.tecchen.xyz/periodicTable.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <!-- EOF -->
+    <div>
+      
+        <hr>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px; margin: 10px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <!-- 标签样式 -->
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <!-- fa-tags fa-tag -->
+            <a href="/tags/three-js/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> three.js</a>
+          
+            <!-- fa-tags fa-tag -->
+            <a href="/tags/webgl/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> webgl</a>
+          
+            <!-- fa-tags fa-tag -->
+            <a href="/tags/超酷的元素周期表/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> 超酷的元素周期表</a>
+          
+            <!-- fa-tags fa-tag -->
+            <a href="/tags/periodic-table/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> periodic table</a>
+          
+            <!-- fa-tags fa-tag -->
+            <a href="/tags/css3d/" rel="tag"><i class="fa fa-paperclip" aria-hidden="true"></i> css3d</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/singlepoint-lock.html" rel="next" title="singlepoint-lock">
+                <i class="fa fa-chevron-left"></i> singlepoint-lock
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      <!-- 加了背景阴影，可以关掉 EOF -->
+      <!--
+      
+      -->
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+             <!-- 点击头像 跳转到首页 -->
+             <a href="https://blog.tecchen.xyz">
+                <img class="site-author-image" itemprop="image" src="https://cdn.tecchen.xyz/avatar.png" alt="TEC-CHEN">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">Candyメ奶糖</p>
+              <p class="site-description motion-element" itemprop="description">TEC-9的跑码场，主要记录、分享在工作中积累的些许经验，希望能帮助到你~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://gitlab.com/java4candy" title="Gitlab &rarr; https://gitlab.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i>Gitlab</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://gitee.com/java4candy" title="Gitee &rarr; https://gitee.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-paper-plane-o"></i>Gitee</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/java4candy" title="GitHub &rarr; https://github.com/java4candy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.cnblogs.com/candies" title="博客园 &rarr; https://www.cnblogs.com/candies" rel="noopener" target="_blank"><i class="fa fa-fw fa-paper-plane-o"></i>博客园</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:tecchen@aliyun.com" title="阿里云邮箱 &rarr; mailto:tecchen@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>阿里云邮箱</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:359031282@qq.com" title="QQ邮箱 &rarr; mailto:359031282@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>QQ邮箱</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/candies" title="https://www.cnblogs.com/candies" rel="noopener" target="_blank">Candyメ奶糖</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#个人代码演示地址"><span class="nav-number">1.</span> <span class="nav-text">个人代码演示地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TODO工作"><span class="nav-number">2.</span> <span class="nav-text">TODO工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码"><span class="nav-number">3.</span> <span class="nav-text">源码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">鲁ICP备19001038号 </a>&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEC-CHEN</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+
+
+<!-- 运行时间 -->
+<span class="post-meta-divider">|</span>
+<i class="fa fa-hourglass-start"></i>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var t1 = Date.UTC(2018,12,01,00,00,00); // 设置建立网站的时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    var text =" 本站已运行";
+    if (diffYears > 0) {
+      text += diffYears+" 年 ";
+    }
+
+    text += diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
+    document.getElementById("sitetime").innerHTML= text;
+  }
+  siteTime();
+</script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+    
+
+  
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '1f98c7bf95a2cfab74fd',
+    clientSecret: '1201c123e738aa3cb3eb55ac6e64a49f4d908f7c',
+    repo: 'java4candy.github.io',
+    owner: 'java4candy',
+    admin: ['java4candy'],
+    id: md5(location.pathname),
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
+
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

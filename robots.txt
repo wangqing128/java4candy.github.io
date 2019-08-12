@@ -4,6 +4,7 @@ Allow: /
 Disallow: /css/
 Disallow: /images/
 Disallow: /js/
+Disallow: /404.html
 
-Sitemap: https://www.tecchen.xyz/sitemap.xml
-Sitemap: https://www.tecchen.xyz/baidusitemap.xml
+Sitemap: https://blog.tecchen.xyz/sitemap.xml
+Sitemap: https://blog.tecchen.xyz/baidusitemap.xml
